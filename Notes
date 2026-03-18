@@ -1,0 +1,25 @@
+memory_get_usage()  ===> used to calculate the RAM used by this PHP process.
+
+When you run a PHP script (like your MVC app), PHP allocates memory in RAM to:
+    - The PHP engine itself
+    - All loaded classes (like HomeController, Autoload, etc.)
+    - Variables, arrays, objects, functions
+    - Built-in PHP structures (strings, numbers, etc.)
+
+Using top or htop to see the Active Script Proccess in RAM Memory
+
+Inside .htaccess file :
+  - RewriteCond %{REQUEST_FILENAME} !-f → If the requested URL isn’t a real file
+  - RewriteCond %{REQUEST_FILENAME} !-d → And isn’t a real directory
+  - RewriteRule ^(.*)$ index.php → Send it to index.php for routing
+
+
+  MVC URL Structure : Domain/ControllerName/ActionName
+
+  trim($string, "x") in PHP, it only removes the specified characters from the beginning and the end of the string. It does not remove them from the middle.
+  trim($url) removes the whitespaces from the beginning and the end of the string,
+
+
+  ucfirst() ==> make first char as uppercase
+
+  use : sudo a2dissite 000-default.conf ===> to prevent default Apache page on the root page
