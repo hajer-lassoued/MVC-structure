@@ -65,14 +65,14 @@ class AbstractModel
     {
         return $this->{static::$primaryKey} === null ? $this->create() : $this->update();
     }
-    /*
+    
     public function delete()
     {
         $sql = 'DELETE FROM ' . static::$tableName . '  WHERE ' . static::$primaryKey . ' = ' . $this->{static::$primaryKey};
         $stmt = DatabaseHandler::factory()->prepare($sql);
         return $stmt->execute();
     }
-    */
+    
     public static function getAll()
     {
         $sql = 'SELECT * FROM ' . static::$tableName;

@@ -56,6 +56,21 @@ class EmployeeController extends AbstractController
        
     }
 
-    
+    public function deleteAction() {
+
+        $id = $this -> filterInt($this->_params [0]);
+        $emps = EmployeeModel::getByPK($id);
+        if($emps === false) {
+            $this->redirect("/employee");
+        }
+        
+        if($emps->delete()) {
+            $_SESSION["employee"] = "Employee Deleted Successfully";
+            $this->redirect("/employee");
+        }
+
+        $this->_views();
+       
+    }
  
 }

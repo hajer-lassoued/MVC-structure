@@ -30,7 +30,7 @@
                     <td><?= $employee->tax ?></td>
                     <td>
                         <a href="/employee/edit/<?= $employee->id ?>">Edit</a>
-                        <a href="/employee/delete/<?= $employee->id ?>" onclick="if(!confirm('<?= $text_delete_confirm ?>')) return false;">delete</a>
+                        <a href="/employee/delete/<?= $employee->id ?>" onclick="if(!confirm('Do you want to Delete it ?')) return false;"><i class="fa fa-trash"></i>Delete</a>
                     </td>
                 </tr>
                 <?php
