@@ -11,6 +11,7 @@ namespace MVC\LIB;
 define("DS", DIRECTORY_SEPARATOR);  // DIRECTORY_SEPARATOR is a built-in PHP constant: / on Linux/macOS and \ on Windows ==> This makes your code work on any OS.
 define("APP_PATH", dirname(realpath(__FILE__)) . DS . ".."); // __FILE__ => current file path (APP_PATH points to your project’s root directory.)
 define("APP_VIEWS", APP_PATH . DS . "views" . DS);
+define('TEMPLATE_PATH',  APP_PATH . DS . "template" . DS);
 
 /**
  * Registering autoload function
