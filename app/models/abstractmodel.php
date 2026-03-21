@@ -52,7 +52,7 @@ class AbstractModel
         }
         return false;
     }
-    /*
+    
     private function update()
     {
         $sql = 'UPDATE ' . static::$tableName . ' SET ' . $this->buildNameParametersSQL() . ' WHERE ' . static::$primaryKey . ' = ' . $this->{static::$primaryKey};
@@ -60,7 +60,7 @@ class AbstractModel
         $this->prepareValues($stmt);
         return $stmt->execute();
     }
-    */
+    
     public function save()
     {
         return $this->{static::$primaryKey} === null ? $this->create() : $this->update();
@@ -88,7 +88,7 @@ class AbstractModel
         };
         return false;
     }
-/*
+
     public static function getByPK($pk)
     {
         $sql = 'SELECT * FROM ' . static::$tableName . '  WHERE ' . static::$primaryKey . ' = "' . $pk . '"';
@@ -103,7 +103,7 @@ class AbstractModel
         }
         return false;
     }
-
+    /*
     public static function getBy($columns, $options = array())
     {
         $whereClauseColumns = array_keys($columns);

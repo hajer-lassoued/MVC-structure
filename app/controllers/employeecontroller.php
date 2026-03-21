@@ -27,9 +27,35 @@ class EmployeeController extends AbstractController
                 $_SESSION["employee"] = "Employee saved Successfully";
                 $this->redirect("/employee");
             }
-            var_dump($emp);
         }
         $this->_views();
     }
+
+    public function editAction() {
+        $id = $this -> filterInt($this->_params [0]);
+        $emps = EmployeeModel::getByPK($id);
+        if($emps === false) {
+            $this->redirect("/employee");
+        }
+
+        $this->_data["employees"] = $emps;
+        
+        if(isset($_POST["submit"])) {
+            $emps->name      =   $this -> filterString($_POST["name"]);
+            $emps->age       =   $this -> filterInt($_POST["age"]);
+            $emps->address   =   $this -> filterString($_POST["address"]);
+            $emps->salary    =   $this -> filterFloat($_POST["salary"]);
+            $emps->tax       =   $this -> filterFloat($_POST["tax"]);
+
+            if($emps->save()) {
+                $_SESSION["employee"] = "Employee saved Successfully";
+                $this->redirect("/employee");
+            }
+        }
+        $this->_views();
+       
+    }
+
+    
  
 }

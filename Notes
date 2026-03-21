@@ -23,3 +23,6 @@ Inside .htaccess file :
   ucfirst() ==> make first char as uppercase
 
   use : sudo a2dissite 000-default.conf ===> to prevent default Apache page on the root page
+
+  array_shift() removes the first element of an array and returns it (array_shift(array &$array) Takes an array by reference 
+  so it modifies the original array and Returns the removed first element) $numbers = [10, 20, 30]; becomes [20, 30]

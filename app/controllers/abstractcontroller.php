@@ -10,6 +10,8 @@ class AbstractController
     protected $_action;
     protected $_params;
 
+    protected $_data = [];
+
     public function notFoundAction () {
          $this->_views();
     }
@@ -27,6 +29,7 @@ class AbstractController
     }
 
     protected function _views () {
+        extract($this->_data);
         if($this->_action == FrontController::NOT_FOUND_ACTION) {
             require_once APP_VIEWS . "notFound" . DS . "notFound.view.php";
         } else {
