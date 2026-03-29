@@ -1,38 +1,3 @@
-<style>
-
-form {
-    max-width: 600px;
-    margin: 50px auto 0;
-}
-fieldset {
-    padding: 20px;
-    background-color: #f7f4f4;
-    border: None;
-}
-legend {
-    padding: 10px;
-    background-color: #e7e7e7;
-}
-.appForm input , textarea{
-    width: 100%;
-    border: None;
-    padding: 15px 5px;
-    font-size: 16px;
-    margin-top: 10px;
-}
-input#submit {
-    display: table;
-}
-input.no_float {
-    width: auto;
-    background-color: #275f24;
-    color:#FFF;
-    border-radius: 3px;
-    padding: 10px;
-}
-</style>
-
-
 <form autocomplete="off" class="appForm clearfix" method="post" enctype="application/x-www-form-urlencoded">
     <fieldset>
         <legend>Employee Information</legend>
