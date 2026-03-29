@@ -11,6 +11,7 @@ class AbstractController
     protected $_params;
 
     protected $_data = [];
+    protected $_template;
 
     public function notFoundAction () {
          $this->_views();
@@ -24,18 +25,24 @@ class AbstractController
         $this->_action = $actionName;
     }
 
+    public function setTemplate ($template) {
+        $this->_template = $template;
+    }
+
     public function setParams ($params) {
         $this->_params = $params;
     }
 
     protected function _views () {
-        extract($this->_data);
+        
         if($this->_action == FrontController::NOT_FOUND_ACTION) {
             require_once APP_VIEWS . "notFound" . DS . "notFound.view.php";
         } else {
             
             $view = APP_VIEWS . $this->_controller . DS . $this->_action . ".view.php";
             if(file_exists($view)) {
+                extract($this->_data);
+                $this->_template-> setActionViewFiles($view);
                 require_once TEMPLATE_PATH . "tempateheaderstart.php";
                 require_once TEMPLATE_PATH . "templateheaderend.php";
                 require_once TEMPLATE_PATH . "wrapperstart.php";

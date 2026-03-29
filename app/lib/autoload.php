@@ -13,6 +13,9 @@ define("APP_PATH", dirname(realpath(__FILE__)) . DS . ".."); // __FILE__ => curr
 define("APP_VIEWS", APP_PATH . DS . "views" . DS);
 define('TEMPLATE_PATH',  APP_PATH . DS . "template" . DS);
 
+define('CSS',  '/css/');
+define('JS',  '/js/');
+
 /**
  * Registering autoload function
  */

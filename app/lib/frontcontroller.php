@@ -14,7 +14,10 @@ class FrontController extends AbstractController
     protected $_action = "default";
     protected $_params = array();
 
-    public function __construct () {
+    protected $_template;
+
+    public function __construct (Template $template) {
+        $this->_template = $template;
         $this->_parseUrl();
 
     }
@@ -50,6 +53,7 @@ class FrontController extends AbstractController
         $controller->setController($this->_controller);
         $controller->setAction($this->_action);
         $controller->setParams($this->_params);
+        $controller->setTemplate($this->_template);
         $controller->$actionName();
         
     }
